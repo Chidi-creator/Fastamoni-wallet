@@ -42,3 +42,9 @@
 {"level":"\u001b[32minfo\u001b[39m","message":" Successfully fetched 670 banks","timestamp":"2025-12-23 11:18:36"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Inserting banks into database...","timestamp":"2025-12-23 11:18:36"}
 {"level":"\u001b[32minfo\u001b[39m","message":" Successfully inserted 668 banks into the database.","timestamp":"2025-12-23 11:18:38"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 11:55:45"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 11:56:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 11:57:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 11:57:37"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 11:57:37"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 11:57:56"}
