@@ -45,8 +45,8 @@ export class AuthService {
         this.opts,
         async (jwtpayload: AuthenticatedUser, done) => {
           try {
-            const userId = Number(jwtpayload.id);
-            if (isNaN(userId)) {
+            // User IDs are UUID strings; no numeric coercion
+            if (!jwtpayload.id || !jwtpayload.email) {
               return done(null, false);
             }
 
@@ -157,7 +157,7 @@ export class AuthService {
     return `${randomInt(100000, 1000000)}`;
   }
 
-  async sendOTPEmail(email: string, ttlSeconds = 30): Promise<void> {
+  async sendOTPEmail(email: string, ttlSeconds = 60): Promise<void> {
     const otp = this.generateOTP();
     console.log(otp)
 

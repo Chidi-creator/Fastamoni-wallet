@@ -15,5 +15,12 @@ class BankUsecase {
   async findAllBanks(): Promise<Bank[]> {
     return this.bankRepository.findAllBanks();
   }
+
+  async findBanksWithSkipAndLimit(
+    limit: number,
+    skip: number
+  ): Promise<{ banks: Bank[]; totalItems: number }> {
+    return this.bankRepository.findBanksWithSkipAndLimit(limit, skip);
+  }
 }
 export default BankUsecase;

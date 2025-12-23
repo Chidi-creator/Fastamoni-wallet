@@ -26,16 +26,25 @@ class BankRepository {
     }
   }
 
-  async findBanksWithSkipAndLimit(limit: number, skip: number): Promise<Bank[]> {
+  async findBanksWithSkipAndLimit(
+    limit: number,
+    skip: number
+  ): Promise<{ banks: Bank[]; totalItems: number }> {
     try {
-      const banks = await prisma.bank.findMany({
-        skip: Math.max(0, skip),
-        take: Math.max(1, limit),
-      });
+      const [banks, totalItems] = await Promise.all([
+        prisma.bank.findMany({
+          skip: Math.max(0, skip),
+          take: Math.max(1, limit),
+          orderBy: { bank_name: "asc" },
+        }),
+        prisma.bank.count(),
+      ]);
 
-      return banks;
+      return { banks, totalItems };
     } catch (error: any) {
-      throw new DatabaseError(`Error fetching paginated banks: ${error.message}`);
+      throw new DatabaseError(
+        `Error fetching paginated banks: ${error.message}`
+      );
     }
   }
 }

@@ -76,3 +76,59 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-23 12:39:53"}
 {"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":2229,"statusCode":200,"timestamp":"2025-12-23 12:39:55"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 12:41:12"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:02:26"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:02:27"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:02:27"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:03:00"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":8,"statusCode":401,"timestamp":"2025-12-23 13:03:00"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:03:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":18,"statusCode":401,"timestamp":"2025-12-23 13:03:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:04:15"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":4,"statusCode":401,"timestamp":"2025-12-23 13:04:15"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:05:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":5,"statusCode":401,"timestamp":"2025-12-23 13:05:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","timestamp":"2025-12-23 13:05:15"}
+{"level":"\u001b[32minfo\u001b[39m","message":"sending email to tyler.igwe@gmail.com","timestamp":"2025-12-23 13:05:17"}
+{"duration":2935,"level":"\u001b[32minfo\u001b[39m","message":"Email: Your OTP Code to tyler.igwe@gmail.com - SENT","timestamp":"2025-12-23 13:05:20"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","responseTime":4787,"statusCode":200,"timestamp":"2025-12-23 13:05:20"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-23 13:05:56"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":256,"statusCode":401,"timestamp":"2025-12-23 13:05:57"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:06:45"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:06:46"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:06:46"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","timestamp":"2025-12-23 13:06:50"}
+{"level":"\u001b[32minfo\u001b[39m","message":"sending email to tyler.igwe@gmail.com","timestamp":"2025-12-23 13:06:52"}
+{"duration":2930,"level":"\u001b[32minfo\u001b[39m","message":"Email: Your OTP Code to tyler.igwe@gmail.com - SENT","timestamp":"2025-12-23 13:06:55"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","responseTime":5110,"statusCode":200,"timestamp":"2025-12-23 13:06:56"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-23 13:07:10"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":376,"statusCode":401,"timestamp":"2025-12-23 13:07:10"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-23 13:07:26"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":233,"statusCode":401,"timestamp":"2025-12-23 13:07:26"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-23 13:07:33"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":206,"statusCode":401,"timestamp":"2025-12-23 13:07:33"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","timestamp":"2025-12-23 13:07:55"}
+{"level":"\u001b[32minfo\u001b[39m","message":"sending email to tyler.igwe@gmail.com","timestamp":"2025-12-23 13:07:56"}
+{"duration":2246,"level":"\u001b[32minfo\u001b[39m","message":"Email: Your OTP Code to tyler.igwe@gmail.com - SENT","timestamp":"2025-12-23 13:07:58"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","responseTime":3743,"statusCode":200,"timestamp":"2025-12-23 13:07:59"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-23 13:08:20"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":1933,"statusCode":200,"timestamp":"2025-12-23 13:08:22"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:08:44"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":8,"statusCode":401,"timestamp":"2025-12-23 13:08:44"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:11:38"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:11:39"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:11:39"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:11:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":19,"statusCode":500,"timestamp":"2025-12-23 13:11:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:13:25"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:13:26"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:13:26"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:13:35"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":1835,"statusCode":200,"timestamp":"2025-12-23 13:13:37"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:16:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:16:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:16:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:17:29"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:17:30"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:17:30"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:17:35"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":1604,"statusCode":200,"timestamp":"2025-12-23 13:17:37"}
