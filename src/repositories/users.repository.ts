@@ -47,6 +47,29 @@ class UserRepository {
     }
   }
 
+  async setPinHash(id: string, pinHash: string): Promise<User> {
+    try {
+      return await prisma.user.update({
+        where: { id },
+        data: { pinHash },
+      });
+    } catch (error: any) {
+      throw new DatabaseError(`Error setting PIN: ${error.message}`);
+    }
+  }
+
+  async getPinHash(id: string): Promise<string | null> {
+    try {
+      const user = await prisma.user.findUnique({
+        where: { id },
+        select: { pinHash: true },
+      });
+      return user?.pinHash ?? null;
+    } catch (error: any) {
+      throw new DatabaseError(`Error fetching PIN: ${error.message}`);
+    }
+  }
+
   async delete(id: string): Promise<User> {
     try {
       // Soft delete by setting deletedAt

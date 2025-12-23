@@ -1,6 +1,7 @@
-import  bcrypt from "bcrypt";
+import bcrypt from "bcrypt";
 import UserRepository from "@repositories/users.repository";
 import { Prisma } from "@prisma/client";
+import { BadRequestError } from "@managers/error.manager";
 
 class UserUseCase {
   userRepository: UserRepository;
@@ -47,6 +48,43 @@ class UserUseCase {
   }
   async deleteUser(id: string) {
     return this.userRepository.delete(id);
+  }
+
+  async setPin(userId: string, pin: string) {
+    this.validatePin(pin);
+    const pinHash = await this.hashPassword(pin);
+    return this.userRepository.setPinHash(userId, pinHash);
+  }
+
+  async updatePin(userId: string, oldPin: string, newPin: string) {
+    this.validatePin(newPin);
+    const storedPinHash = await this.userRepository.getPinHash(userId);
+
+    if (!storedPinHash) {
+      throw new BadRequestError("PIN not set");
+    }
+
+    const isMatch = await bcrypt.compare(oldPin, storedPinHash);
+    if (!isMatch) {
+      throw new BadRequestError("Invalid old PIN");
+    }
+
+    const newHash = await this.hashPassword(newPin);
+    return this.userRepository.setPinHash(userId, newHash);
+  }
+
+  private validatePin(pin: string) {
+    if (!/^[0-9]{4,6}$/.test(pin)) {
+      throw new BadRequestError("PIN must be 4-6 digits");
+    }
+  }
+
+  async verifyPin(userId: string, pin: string): Promise<boolean> {
+    const storedPinHash = await this.userRepository.getPinHash(userId);
+    if (!storedPinHash) {
+      return false;
+    }
+    return bcrypt.compare(pin, storedPinHash);
   }
 }
 

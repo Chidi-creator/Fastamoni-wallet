@@ -7,6 +7,7 @@ export interface EnvConfig {
   MAIL_SECURE: boolean;
   MAIL_SERVICE: string;
   FLUTTERWAVE_SANDBOX_SECRET_KEY: string;
+  FLUTTERWAVE_WEBHOOK_SECRET: string;
   JWT_SECRET: string;
   JWT_ACCESS_TOKEN_EXPIRES_IN: string;
   JWT_REFRESH_TOKEN_EXPIRES_IN: string;

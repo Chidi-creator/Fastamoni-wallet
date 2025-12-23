@@ -13,6 +13,7 @@ export const env: EnvConfig = {
   MAIL_SECURE: process.env.MAIL_SECURE === "true",
   MAIL_SERVICE: process.env.MAIL_SERVICE as string,
   FLUTTERWAVE_SANDBOX_SECRET_KEY: process.env.FLUTTERWAVE_SANDBOX_SECRET_KEY as string,
+  FLUTTERWAVE_WEBHOOK_SECRET: process.env.FLUTTERWAVE_WEBHOOK_SECRET as string,
   JWT_ACCESS_TOKEN_EXPIRES_IN: process.env.JWT_ACCESS_TOKEN_EXPIRES_IN as string,
   JWT_REFRESH_TOKEN_EXPIRES_IN: process.env.JWT_REFRESH_TOKEN_EXPIRES_IN as string,
   REDIS_HOST: process.env.REDIS_HOST as string,
