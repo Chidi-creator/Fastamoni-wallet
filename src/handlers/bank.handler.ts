@@ -29,6 +29,6 @@ class BankHandler {
     } catch (error: any) {
       return responseManager.handleError(res, error);
     }
-  }
+  };
 }
 export default BankHandler;

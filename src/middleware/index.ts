@@ -7,6 +7,7 @@ import requestLogger from "./logger.middleware";
 import UserRoutes from "@deliverymen/user.delivery";
 import AuthRoutes from "@deliverymen/auth.delivery";
 import BankRoutes from "@deliverymen/bank.delivery";
+import AccountRoutes from "@deliverymen/account.delivery";
 
 const app = express();
 const middleware = new Middleware(app);
@@ -19,6 +20,7 @@ const setUpRoutes = (middleware: Middleware) => {
 
   middleware.addMiddleware("/users", UserRoutes);
   middleware.addMiddleware("/auth", AuthRoutes);
+  middleware.addMiddleware("/accounts", AccountRoutes);
   middleware.addMiddleware("/banks", BankRoutes);
 
 };

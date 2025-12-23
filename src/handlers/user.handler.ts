@@ -1,18 +1,19 @@
 import { responseManager } from "@managers/index";
 import { Prisma } from "@prisma/client";
+import { CreateWalletRequest } from "@providers/wallet/types/wallet";
+import WalletService from "@services/wallet.service";
 import UserUseCase from "@usecases/user.usecase";
 import WalletUsecase from "@usecases/wallet.usecase";
 import { validateUserCreation } from "@validation/user";
 import { Request, Response } from "express";
 export class UserHandler {
   userUsecase: UserUseCase;
-  walletUsecase: WalletUsecase;
-
+  walletService: WalletService;
   constructor() {
     this.userUsecase = new UserUseCase();
-    this.walletUsecase = new WalletUsecase();
+    this.walletService = new WalletService();
   }
-   handleCreateUser = async (req: Request, res: Response) => {
+  handleCreateUser = async (req: Request, res: Response) => {
     try {
       const data: Prisma.UserCreateInput = req.body;
 
@@ -24,24 +25,32 @@ export class UserHandler {
 
       const newUser = await this.userUsecase.createUser(data);
 
-      const walletData: Prisma.WalletUncheckedCreateInput = {
-        userId: newUser.id,
+      const walletData: CreateWalletRequest = {
+        email: newUser.email,
+        firstname: newUser.firstname,
+        lastname: newUser.lastname,
+        currency: "NGN",
+        bank_code: "044", // Access bank code as default
+        bvn: "22222222222", // Dummy BVN for now,
+        is_permanent: true,
       };
 
-      const newWallet = await this.walletUsecase.InitialiseWalletForUser(
+      //coming back to this to make it a background job
+      const newWallet = await this.walletService.callFlutterwaveWalletCreation(
+        newUser.id,
         walletData
       );
 
       return responseManager.success(
         res,
-        { user: newUser, wallet: newWallet },
+        { user: newUser, },
         "User created successfully",
         201
       );
     } catch (error: any) {
-        return responseManager.handleError(res, error);
+      return responseManager.handleError(res, error);
     }
-  }
+  };
 }
 
 export default UserHandler;

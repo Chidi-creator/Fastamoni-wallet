@@ -47,6 +47,16 @@ class BankRepository {
       );
     }
   }
+
+  async findByBankCode(bankCode: string): Promise<Bank | null> {
+    try {
+      return await prisma.bank.findUnique({
+        where: { bank_code: bankCode },
+      });
+    } catch (error: any) {
+      throw new DatabaseError(`Error finding bank by code: ${error.message}`);
+    }
+  }
 }
 
 export default BankRepository;

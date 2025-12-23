@@ -132,3 +132,21 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:17:30"}
 {"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-23 13:17:35"}
 {"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":1604,"statusCode":200,"timestamp":"2025-12-23 13:17:37"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:20:42"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:20:43"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:20:43"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:21:28"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:21:29"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:21:29"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 13:30:05"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 13:30:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 13:30:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 13:32:00"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 14:34:29"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 14:34:30"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 14:34:30"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 14:34:46"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Creating wallet with Flutterwave for account: Chidiebere","timestamp":"2025-12-23 14:34:48"}
+{"bank_code":"044","bank_name":"Access Bank","level":"\u001b[32minfo\u001b[39m","message":"Initializing wallet for user with data:","timestamp":"2025-12-23 14:35:09","userId":"b64ba9fe-62b5-4bd3-a168-aae09704502b","wallet_number":"1962435565"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":24951,"statusCode":201,"timestamp":"2025-12-23 14:35:11"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 14:36:32"}
