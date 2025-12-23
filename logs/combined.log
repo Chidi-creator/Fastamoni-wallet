@@ -1,0 +1,39 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-22 16:06:19"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-22 16:06:42"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-22 16:11:14"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-22 16:11:52"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-22 16:12:59"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-22 16:14:00"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /healthcheck","timestamp":"2025-12-22 16:14:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /healthcheck","responseTime":5,"statusCode":304,"timestamp":"2025-12-22 16:14:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /healthcheck","timestamp":"2025-12-22 16:14:22"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /healthcheck","responseTime":2,"statusCode":304,"timestamp":"2025-12-22 16:14:22"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-22 16:20:24"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 05:04:25"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 05:05:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 05:15:25"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /users/register","timestamp":"2025-12-23 05:18:55"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /users/register","responseTime":12,"statusCode":404,"timestamp":"2025-12-23 05:18:55"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 05:19:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":22,"statusCode":400,"timestamp":"2025-12-23 05:19:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 05:19:09"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":6,"statusCode":400,"timestamp":"2025-12-23 05:19:09"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 05:20:27"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 05:20:38"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":32,"statusCode":400,"timestamp":"2025-12-23 05:20:38"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 05:20:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":143,"statusCode":500,"timestamp":"2025-12-23 05:20:42"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 05:21:11"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 05:24:21"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 05:24:26"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":173,"statusCode":500,"timestamp":"2025-12-23 05:24:26"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 05:24:29"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":11,"statusCode":500,"timestamp":"2025-12-23 05:24:29"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 05:26:13"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 05:29:14"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 05:29:21"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":11663,"statusCode":500,"timestamp":"2025-12-23 05:29:33"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 05:30:56"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing wallet for user with data:","timestamp":"2025-12-23 05:30:57","userId":"9ec5d42c-d62f-4d26-93a6-9c0cb07d7976"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":1215,"statusCode":201,"timestamp":"2025-12-23 05:30:58"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 05:40:39"}

@@ -1,0 +1,41 @@
+{
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["ES2020"],
+    "types": ["node"],
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "isolatedModules": true,
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "outDir": "dist",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@db/*": ["db/*"],
+      "@global/*": ["global/*"],
+      "@services/*": ["services/*"],
+      "@middleware/*": ["middleware/*"],
+      "@repositories/*": ["repositories/*"],
+      "@handlers/*": ["handlers/*"],
+      "@usecases/*": ["usecases/*"],
+      "@routes/*": ["routes/*"],
+      "@managers/*": ["managers/*"],
+      "@utils/*": ["utils/*"],
+      "@validation/*": ["validation/*"],
+      "@providers/*": ["providers/*"],
+      "@deliverymen/*": ["deliverymen/*"],
+      "@generated/*": ["generated/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
