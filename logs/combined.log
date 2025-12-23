@@ -37,3 +37,8 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Initializing wallet for user with data:","timestamp":"2025-12-23 05:30:57","userId":"9ec5d42c-d62f-4d26-93a6-9c0cb07d7976"}
 {"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":1215,"statusCode":201,"timestamp":"2025-12-23 05:30:58"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 05:40:39"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Fetching banks from Flutterwave API...","timestamp":"2025-12-23 10:43:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Fetching banks from Flutterwave API...","timestamp":"2025-12-23 11:18:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":" Successfully fetched 670 banks","timestamp":"2025-12-23 11:18:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Inserting banks into database...","timestamp":"2025-12-23 11:18:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":" Successfully inserted 668 banks into the database.","timestamp":"2025-12-23 11:18:38"}

@@ -13,27 +13,28 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  firstname String
-  lastname  String
-  email     String   @unique
-  password  String
-  wallet    Wallet?
-  pinHash   String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  deletedAt DateTime?
+  id                     String     @id @default(uuid())
+  firstname              String
+  lastname               String
+  email                  String     @unique
+  password               String
+  wallet                 Wallet?
+  pinHash                String?
+  createdAt              DateTime   @default(now())
+  updatedAt              DateTime   @updatedAt
+  deletedAt              DateTime?
   donationsAsDonor       Donation[] @relation("DonationDonor") @ignore
   donationsAsBeneficiary Donation[] @relation("DonationBeneficiary") @ignore
+  accounts               Account[]
 }
 
 model Wallet {
-  id        String   @id @default(uuid())
-  balance   Int      @default(0)
-  userId    String   @unique
-  user      User     @relation(fields: [userId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        String    @id @default(uuid())
+  balance   Int       @default(0)
+  userId    String    @unique
+  user      User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
   deletedAt DateTime?
 }
 
@@ -41,8 +42,8 @@ model Donation {
   id            String       @id @default(uuid())
   donorId       String
   beneficiaryId String
-  donor         User     @relation("DonationDonor", fields: [donorId], references: [id])
-  beneficiary   User     @relation("DonationBeneficiary", fields: [beneficiaryId], references: [id])
+  donor         User         @relation("DonationDonor", fields: [donorId], references: [id])
+  beneficiary   User         @relation("DonationBeneficiary", fields: [beneficiaryId], references: [id])
   amount        Int
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
@@ -51,12 +52,36 @@ model Donation {
 }
 
 model Transaction {
-  id             String   @id @default(uuid())
-  donationId     String   @unique
-  donation       Donation @relation(fields: [donationId], references: [id])
-  idempotencyKey String   @unique
+  id             String    @id @default(uuid())
+  donationId     String    @unique
+  donation       Donation  @relation(fields: [donationId], references: [id])
+  idempotencyKey String    @unique
   status         String
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  deletedAt      DateTime?
+}
+
+model Bank {
+  id        String    @id @default(uuid())
+  bank_name String
+  bank_code String    @unique
+  accounts  Account[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model Account {
+  id             String    @id @default(uuid())
+  userId         String
+  user           User      @relation(fields: [userId], references: [id])
+  account_number String    @unique
+  account_name   String
+  bank_code      String
+  bankId         String
+  bank           Bank      @relation(fields: [bankId], references: [id])
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
   deletedAt      DateTime?
 }
