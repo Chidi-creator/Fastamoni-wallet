@@ -16,5 +16,5 @@ export interface AuthenticatedRequest extends Request {
 
 export interface ILoginRequest {
   email: string;
-  otp?: string;
+  password: string;
 }

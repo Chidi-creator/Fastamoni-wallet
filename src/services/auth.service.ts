@@ -157,7 +157,7 @@ export class AuthService {
     return `${randomInt(100000, 1000000)}`;
   }
 
-  async sendOTPEmail(email: string): Promise<void> {
+  async sendOTPEmail(email: string, ttlSeconds = 30): Promise<void> {
     const otp = this.generateOTP();
     console.log(otp)
 
@@ -183,7 +183,7 @@ export class AuthService {
       throw error;
     }
 
-    await this.cacheService.set(`otp_${email}`, otp, 60)
+    await this.cacheService.set(`otp_${email}`, otp, ttlSeconds)
   }
 
   async validateOTP(email: string, otp: string): Promise<boolean> {

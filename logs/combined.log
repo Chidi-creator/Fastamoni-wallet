@@ -48,3 +48,31 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 11:57:37"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 11:57:37"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 11:57:56"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 12:10:24"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 12:10:24"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 12:10:24"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","timestamp":"2025-12-23 12:10:49"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing wallet for user with data:","timestamp":"2025-12-23 12:10:50","userId":"6a484bc5-238d-4660-875c-4ab1e0e40ff1"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /users/register","responseTime":1822,"statusCode":201,"timestamp":"2025-12-23 12:10:50"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 12:12:55"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 12:33:35"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 12:33:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 12:33:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-23 12:37:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 12:37:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 12:37:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /auth/login","timestamp":"2025-12-23 12:38:02"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /auth/login","responseTime":62,"statusCode":404,"timestamp":"2025-12-23 12:38:02"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","timestamp":"2025-12-23 12:38:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"sending email to tyler.igwe@gmail.com","timestamp":"2025-12-23 12:38:09"}
+{"duration":2522,"level":"\u001b[32minfo\u001b[39m","message":"Email: Your OTP Code to tyler.igwe@gmail.com - SENT","timestamp":"2025-12-23 12:38:12"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","responseTime":4428,"statusCode":200,"timestamp":"2025-12-23 12:38:12"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-23 12:39:11"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":360,"statusCode":401,"timestamp":"2025-12-23 12:39:11"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","timestamp":"2025-12-23 12:39:30"}
+{"level":"\u001b[32minfo\u001b[39m","message":"sending email to tyler.igwe@gmail.com","timestamp":"2025-12-23 12:39:31"}
+{"duration":2194,"level":"\u001b[32minfo\u001b[39m","message":"Email: Your OTP Code to tyler.igwe@gmail.com - SENT","timestamp":"2025-12-23 12:39:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","responseTime":4073,"statusCode":200,"timestamp":"2025-12-23 12:39:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-23 12:39:53"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":2229,"statusCode":200,"timestamp":"2025-12-23 12:39:55"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 12:41:12"}

@@ -5,6 +5,7 @@ import helmet from "helmet";
 import passport from "passport";   
 import requestLogger from "./logger.middleware"; 
 import UserRoutes from "@deliverymen/user.delivery";
+import AuthRoutes from "@deliverymen/auth.delivery";
 
 const app = express();
 const middleware = new Middleware(app);
@@ -16,6 +17,7 @@ const setUpRoutes = (middleware: Middleware) => {
   });
 
   middleware.addMiddleware("/users", UserRoutes);
+  middleware.addMiddleware("/auth", AuthRoutes);
 
 };
 
