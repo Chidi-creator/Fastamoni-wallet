@@ -4,6 +4,7 @@ import middleware from "./middleware";
 import { connectDatabase, disconnectDatabase } from "./db/prisma";
 import logger from "@services/logger.service";
 import { redisConfig } from "./providers";
+import setUpWorkers from "engine";
 
 dotenv.config();
 
@@ -23,6 +24,11 @@ async function startServer() {
     logger.info("Initializing Redis connection...");
     await redisConfig.connect();
     logger.info("Redis connected successfully");
+
+    // Start background workers
+    setUpWorkers().catch((error) => {
+      logger.error("Error setting up workers:", error);
+    });
 
     middleware.getApp().listen(PORT, () => {
       logger.info(`Server running on http://localhost:${PORT}`);

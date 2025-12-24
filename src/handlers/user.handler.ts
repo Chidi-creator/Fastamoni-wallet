@@ -1,3 +1,4 @@
+import { JOBS } from "@config/constants";
 import { responseManager } from "@managers/index";
 import { Prisma } from "@prisma/client";
 import { CreateWalletRequest } from "@providers/wallet/types/wallet";
@@ -5,6 +6,7 @@ import WalletService from "@services/wallet.service";
 import UserUseCase from "@usecases/user.usecase";
 import WalletUsecase from "@usecases/wallet.usecase";
 import { validateUserCreation } from "@validation/user";
+import { addWalletJobs } from "engine/jobs/wallet.jobs";
 import { Request, Response } from "express";
 export class UserHandler {
   userUsecase: UserUseCase;
@@ -35,15 +37,15 @@ export class UserHandler {
         is_permanent: true,
       };
 
-      //coming back to this to make it a background job
-      const newWallet = await this.walletService.callFlutterwaveWalletCreation(
-        newUser.id,
-        walletData
-      );
+      
+      await addWalletJobs(JOBS.CREATE_USER_WALLET, {
+        userId: newUser.id,
+        walletData,
+      });
 
       return responseManager.success(
         res,
-        { user: newUser, },
+        { user: newUser },
         "User created successfully",
         201
       );

@@ -16,3 +16,13 @@ export const nodeMailerConfig: NodeMailerConfigType = {
     pass: env.MAIL_PASS,
   },
 };
+
+export enum QueueNames {
+  EMAIL_QUEUE = "email-queue",
+  WALLET_QUEUE = "wallet-queue",
+  TRANSACTION_QUEUE = "transaction-queue",
+}
+
+export enum JOBS {
+  CREATE_USER_WALLET = "create-user-wallet",
+}
