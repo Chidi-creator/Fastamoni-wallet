@@ -8,7 +8,7 @@
     "seed:banks": "ts-node -r tsconfig-paths/register src/db/seeds/seed-banks.ts",
     "seed:users": "ts-node -r tsconfig-paths/register src/db/seeds/seed-users.ts",
     "test:load": "node loadtest.js",
-    "start": "node --max-old-space-size=4096 dist/app.js"
+    "start": "node -r ./register-paths dist/app.js"
   },
   "keywords": [],
   "author": "",
