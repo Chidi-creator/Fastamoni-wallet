@@ -33,10 +33,10 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-const env_1 = require("@config/env");
+const env_1 = require("../../config/env");
 const nodemailer = __importStar(require("nodemailer"));
-const error_manager_1 = require("@managers/error.manager");
-const constants_1 = require("@config/constants");
+const error_manager_1 = require("../../managers/error.manager");
+const constants_1 = require("../../config/constants");
 class NodemailerConfig {
     constructor() {
         this.config = constants_1.nodeMailerConfig;

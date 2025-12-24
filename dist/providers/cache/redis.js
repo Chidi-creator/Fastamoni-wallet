@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const redis_1 = require("redis");
-const env_1 = require("@config/env");
-const error_manager_1 = require("@managers/error.manager");
+const env_1 = require("../../config/env");
+const error_manager_1 = require("../../managers/error.manager");
 class RedisConfig {
     constructor() {
         this.connected = false;

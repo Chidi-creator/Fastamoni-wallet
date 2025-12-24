@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const paymentIntent_repository_1 = __importDefault(require("@repositories/paymentIntent.repository"));
+const paymentIntent_repository_1 = __importDefault(require("../repositories/paymentIntent.repository"));
 class PaymentIntentUseCase {
     constructor() {
         this.repo = new paymentIntent_repository_1.default();

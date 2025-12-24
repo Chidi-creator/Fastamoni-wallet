@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addBankTransferJob = exports.addDonationTransferJob = exports.addWebhookJob = void 0;
-const constants_1 = require("@config/constants");
-const logger_service_1 = __importDefault(require("@services/logger.service"));
+const constants_1 = require("../../config/constants");
+const logger_service_1 = __importDefault(require("../../services/logger.service"));
 const transaction_queue_1 = require("../queues/transaction.queue");
 const addWebhookJob = async (data) => {
     try {

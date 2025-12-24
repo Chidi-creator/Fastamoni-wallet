@@ -9,11 +9,11 @@ const cors_1 = __importDefault(require("cors"));
 const helmet_1 = __importDefault(require("helmet"));
 const passport_1 = __importDefault(require("passport"));
 const logger_middleware_1 = require("./logger.middleware");
-const user_delivery_1 = __importDefault(require("@deliverymen/user.delivery"));
-const auth_delivery_1 = __importDefault(require("@deliverymen/auth.delivery"));
-const bank_delivery_1 = __importDefault(require("@deliverymen/bank.delivery"));
-const account_delivery_1 = __importDefault(require("@deliverymen/account.delivery"));
-const transaction_delivery_1 = __importDefault(require("@deliverymen/transaction.delivery"));
+const user_delivery_1 = __importDefault(require("../deliverymen/user.delivery"));
+const auth_delivery_1 = __importDefault(require("../deliverymen/auth.delivery"));
+const bank_delivery_1 = __importDefault(require("../deliverymen/bank.delivery"));
+const account_delivery_1 = __importDefault(require("../deliverymen/account.delivery"));
+const transaction_delivery_1 = __importDefault(require("../deliverymen/transaction.delivery"));
 const app = (0, express_1.default)();
 const middleware = new middleware_1.default(app);
 const setUpRoutes = (middleware) => {

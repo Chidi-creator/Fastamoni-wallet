@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("@managers/index");
-const transaction_service_1 = __importDefault(require("@services/transaction.service"));
-const user_usecase_1 = __importDefault(require("@usecases/user.usecase"));
-const transaction_jobs_1 = require("engine/jobs/transaction.jobs");
-const cache_service_1 = __importDefault(require("@services/cache.service"));
+const index_1 = require("../managers/index");
+const transaction_service_1 = __importDefault(require("../services/transaction.service"));
+const user_usecase_1 = __importDefault(require("../usecases/user.usecase"));
+const transaction_jobs_1 = require("../engine/jobs/transaction.jobs");
+const cache_service_1 = __importDefault(require("../services/cache.service"));
 class TransactionHandler {
     constructor() {
         this.handleDonationTransfer = async (req, res) => {

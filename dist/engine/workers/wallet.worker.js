@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.startWalletWorker = void 0;
-const constants_1 = require("@config/constants");
-const logger_service_1 = __importDefault(require("@services/logger.service"));
-const queue_service_1 = __importDefault(require("@services/queue.service"));
-const wallet_service_1 = __importDefault(require("@services/wallet.service"));
+const constants_1 = require("../../config/constants");
+const logger_service_1 = __importDefault(require("../../services/logger.service"));
+const queue_service_1 = __importDefault(require("../../services/queue.service"));
+const wallet_service_1 = __importDefault(require("../../services/wallet.service"));
 const queueService = new queue_service_1.default();
 const walletService = new wallet_service_1.default();
 const startWalletWorker = async () => {

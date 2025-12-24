@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const bullmq_1 = require("bullmq");
-const env_1 = require("@config/env");
+const env_1 = require("../../config/env");
 class BullMQConfig {
     constructor() {
         this.connectionOptions = {

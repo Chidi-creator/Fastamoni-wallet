@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const banks_repository_1 = __importDefault(require("@repositories/banks.repository"));
-const cache_service_1 = __importDefault(require("@services/cache.service"));
+const banks_repository_1 = __importDefault(require("../repositories/banks.repository"));
+const cache_service_1 = __importDefault(require("../services/cache.service"));
 class BankUsecase {
     constructor() {
         this.bankRepository = new banks_repository_1.default();

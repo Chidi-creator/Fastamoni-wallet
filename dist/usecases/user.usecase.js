@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const users_repository_1 = __importDefault(require("@repositories/users.repository"));
-const error_manager_1 = require("@managers/error.manager");
-const cache_service_1 = __importDefault(require("@services/cache.service"));
+const users_repository_1 = __importDefault(require("../repositories/users.repository"));
+const error_manager_1 = require("../managers/error.manager");
+const cache_service_1 = __importDefault(require("../services/cache.service"));
 class UserUseCase {
     constructor() {
         this.saltRounds = 10;

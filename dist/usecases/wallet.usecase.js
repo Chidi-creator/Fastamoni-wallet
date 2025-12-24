@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const wallet_repository_1 = __importDefault(require("@repositories/wallet.repository"));
-const logger_service_1 = __importDefault(require("@services/logger.service"));
-const cache_service_1 = __importDefault(require("@services/cache.service"));
+const wallet_repository_1 = __importDefault(require("../repositories/wallet.repository"));
+const logger_service_1 = __importDefault(require("../services/logger.service"));
+const cache_service_1 = __importDefault(require("../services/cache.service"));
 class WalletUsecase {
     constructor() {
         this.walletRepository = new wallet_repository_1.default();

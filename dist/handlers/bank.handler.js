@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("@managers/index");
-const bank_usecase_1 = __importDefault(require("@usecases/bank.usecase"));
-const cache_service_1 = __importDefault(require("@services/cache.service"));
+const index_1 = require("../managers/index");
+const bank_usecase_1 = __importDefault(require("../usecases/bank.usecase"));
+const cache_service_1 = __importDefault(require("../services/cache.service"));
 class BankHandler {
     constructor() {
         this.getAllBanks = async (req, res) => {

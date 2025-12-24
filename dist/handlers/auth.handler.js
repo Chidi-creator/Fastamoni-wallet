@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const index_1 = require("@managers/index");
-const auth_service_1 = require("@services/auth.service");
-const user_usecase_1 = __importDefault(require("@usecases/user.usecase"));
+const index_1 = require("../managers/index");
+const auth_service_1 = require("../services/auth.service");
+const user_usecase_1 = __importDefault(require("../usecases/user.usecase"));
 class AuthHandler {
     constructor() {
         // Step 1: verify credentials, send OTP, return email handle

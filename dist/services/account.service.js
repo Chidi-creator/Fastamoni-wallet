@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const account_usecase_1 = __importDefault(require("@usecases/account.usecase"));
-const bank_usecase_1 = __importDefault(require("@usecases/bank.usecase"));
-const index_1 = require("@providers/index");
-const error_manager_1 = require("@managers/error.manager");
+const account_usecase_1 = __importDefault(require("../usecases/account.usecase"));
+const bank_usecase_1 = __importDefault(require("../usecases/bank.usecase"));
+const index_1 = require("../providers/index");
+const error_manager_1 = require("../managers/error.manager");
 const logger_service_1 = __importDefault(require("./logger.service"));
 class AccountService {
     constructor() {

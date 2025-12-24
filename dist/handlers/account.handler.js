@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const account_service_1 = __importDefault(require("@services/account.service"));
-const account_usecase_1 = __importDefault(require("@usecases/account.usecase"));
-const index_1 = require("@managers/index");
-const account_1 = require("@validation/account");
+const account_service_1 = __importDefault(require("../services/account.service"));
+const account_usecase_1 = __importDefault(require("../usecases/account.usecase"));
+const index_1 = require("../managers/index");
+const account_1 = require("../validation/account");
 class AcccountHandler {
     constructor() {
         this.createAccount = async (req, res) => {

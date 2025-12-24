@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.startTransactionWorker = void 0;
-const constants_1 = require("@config/constants");
-const logger_service_1 = __importDefault(require("@services/logger.service"));
-const queue_service_1 = __importDefault(require("@services/queue.service"));
-const transaction_service_1 = __importDefault(require("@services/transaction.service"));
+const constants_1 = require("../../config/constants");
+const logger_service_1 = __importDefault(require("../../services/logger.service"));
+const queue_service_1 = __importDefault(require("../../services/queue.service"));
+const transaction_service_1 = __importDefault(require("../../services/transaction.service"));
 const queueService = new queue_service_1.default();
 const transactionService = new transaction_service_1.default();
 const startTransactionWorker = async () => {

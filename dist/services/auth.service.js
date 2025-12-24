@@ -7,12 +7,12 @@ exports.AuthService = void 0;
 const passport_1 = __importDefault(require("passport"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const passport_jwt_1 = require("passport-jwt");
-const env_1 = require("@config/env");
-const index_1 = require("@managers/index");
-const user_usecase_1 = __importDefault(require("@usecases/user.usecase"));
+const env_1 = require("../config/env");
+const index_1 = require("../managers/index");
+const user_usecase_1 = __importDefault(require("../usecases/user.usecase"));
 const crypto_1 = require("crypto");
 const mail_service_1 = __importDefault(require("./mail.service"));
-const error_manager_1 = require("@managers/error.manager");
+const error_manager_1 = require("../managers/error.manager");
 const logger_service_1 = __importDefault(require("./logger.service"));
 const cache_service_1 = __importDefault(require("./cache.service"));
 class AuthService {

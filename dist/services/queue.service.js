@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("@providers/index");
+const index_1 = require("../providers/index");
 class QueueService {
     async createQueue(name) {
         return await index_1.bullMqConfig.createQueue(name);

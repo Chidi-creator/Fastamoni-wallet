@@ -3,17 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const transaction_usecase_1 = __importDefault(require("@usecases/transaction.usecase"));
-const donation_usecase_1 = __importDefault(require("@usecases/donation.usecase"));
-const paymentIntent_usecase_1 = __importDefault(require("@usecases/paymentIntent.usecase"));
-const user_usecase_1 = __importDefault(require("@usecases/user.usecase"));
-const wallet_usecase_1 = __importDefault(require("@usecases/wallet.usecase"));
-const error_manager_1 = require("@managers/error.manager");
-const logger_service_1 = __importDefault(require("@services/logger.service"));
-const constants_1 = require("@config/constants");
-const flutterwave_1 = __importDefault(require("@providers/payments/flutterwave"));
-const env_1 = require("@config/env");
-const mail_service_1 = __importDefault(require("@services/mail.service"));
+const transaction_usecase_1 = __importDefault(require("../usecases/transaction.usecase"));
+const donation_usecase_1 = __importDefault(require("../usecases/donation.usecase"));
+const paymentIntent_usecase_1 = __importDefault(require("../usecases/paymentIntent.usecase"));
+const user_usecase_1 = __importDefault(require("../usecases/user.usecase"));
+const wallet_usecase_1 = __importDefault(require("../usecases/wallet.usecase"));
+const error_manager_1 = require("../managers/error.manager");
+const logger_service_1 = __importDefault(require("./logger.service"));
+const constants_1 = require("../config/constants");
+const flutterwave_1 = __importDefault(require("../providers/payments/flutterwave"));
+const env_1 = require("../config/env");
+const mail_service_1 = __importDefault(require("./mail.service"));
 class TransactionService {
     constructor() {
         this.walletUsecase = new wallet_usecase_1.default();

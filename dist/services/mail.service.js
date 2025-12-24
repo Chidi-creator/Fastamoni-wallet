@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("@providers/index");
-const env_1 = require("@config/env");
+const index_1 = require("../providers/index");
+const env_1 = require("../config/env");
 const logger_service_1 = __importDefault(require("./logger.service"));
 class MailService {
     async sendMail(mailOptions) {

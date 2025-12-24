@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const account_repository_1 = __importDefault(require("@repositories/account.repository"));
+const account_repository_1 = __importDefault(require("../repositories/account.repository"));
 class AccountUseCase {
     constructor() {
         this.accountRepository = new account_repository_1.default();

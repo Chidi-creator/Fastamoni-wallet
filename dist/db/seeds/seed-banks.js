@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const env_1 = require("@config/env");
-const bank_usecase_1 = __importDefault(require("@usecases/bank.usecase"));
-const logger_service_1 = __importDefault(require("@services/logger.service"));
+const env_1 = require("../../config/env");
+const bank_usecase_1 = __importDefault(require("../../usecases/bank.usecase"));
+const logger_service_1 = __importDefault(require("../../services/logger.service"));
 class BankSeeder {
     constructor() {
         this.bankUsecase = new bank_usecase_1.default();

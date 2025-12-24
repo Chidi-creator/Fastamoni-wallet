@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.requestLogger = void 0;
-const logger_service_1 = __importDefault(require("@services/logger.service"));
+const logger_service_1 = __importDefault(require("../services/logger.service"));
 const requestLogger = (req, res, next) => {
     const startTime = Date.now();
     req.startTime = startTime;

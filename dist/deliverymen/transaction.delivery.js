@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const auth_service_1 = require("@services/auth.service");
-const transaction_handler_1 = __importDefault(require("@handlers/transaction.handler"));
+const auth_service_1 = require("../services/auth.service");
+const transaction_handler_1 = __importDefault(require("../handlers/transaction.handler"));
 const router = express_1.default.Router();
 const authService = new auth_service_1.AuthService();
 const transactionHandler = new transaction_handler_1.default();

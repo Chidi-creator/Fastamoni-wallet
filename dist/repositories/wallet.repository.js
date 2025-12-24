@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const prisma_1 = __importDefault(require("@db/prisma"));
-const error_manager_1 = require("@managers/error.manager");
+const prisma_1 = __importDefault(require("../db/prisma"));
+const error_manager_1 = require("../managers/error.manager");
 class WalletRepository {
     async create(data) {
         try {

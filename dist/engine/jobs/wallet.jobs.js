@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addWalletJobs = void 0;
-const logger_service_1 = __importDefault(require("@services/logger.service"));
-const wallet_queue_1 = require("engine/queues/wallet.queue");
+const logger_service_1 = __importDefault(require("../../services/logger.service"));
+const wallet_queue_1 = require("../../engine/queues/wallet.queue");
 const addWalletJobs = async (jobName, data) => {
     try {
         const queue = await wallet_queue_1.walletQueue;

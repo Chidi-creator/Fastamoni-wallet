@@ -4,12 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserHandler = void 0;
-const constants_1 = require("@config/constants");
-const index_1 = require("@managers/index");
-const wallet_service_1 = __importDefault(require("@services/wallet.service"));
-const user_usecase_1 = __importDefault(require("@usecases/user.usecase"));
-const user_1 = require("@validation/user");
-const wallet_jobs_1 = require("engine/jobs/wallet.jobs");
+const constants_1 = require("../config/constants");
+const index_1 = require("../managers/index");
+const wallet_service_1 = __importDefault(require("../services/wallet.service"));
+const user_usecase_1 = __importDefault(require("../usecases/user.usecase"));
+const user_1 = require("../validation/user");
+const wallet_jobs_1 = require("../engine/jobs/wallet.jobs");
 class UserHandler {
     constructor() {
         this.handleCreateUser = async (req, res) => {

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const prisma_1 = __importDefault(require("../prisma"));
-const logger_service_1 = __importDefault(require("@services/logger.service"));
+const logger_service_1 = __importDefault(require("../../services/logger.service"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 async function seedUsers() {
     try {

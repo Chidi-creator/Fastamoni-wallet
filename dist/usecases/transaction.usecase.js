@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const transaction_repository_1 = __importDefault(require("@repositories/transaction.repository"));
+const transaction_repository_1 = __importDefault(require("../repositories/transaction.repository"));
 class TransactionUseCase {
     constructor() {
         this.transactionRepository = new transaction_repository_1.default();

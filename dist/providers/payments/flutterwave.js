@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const env_1 = require("@config/env");
-const logger_service_1 = __importDefault(require("@services/logger.service"));
+const env_1 = require("../../config/env");
+const logger_service_1 = __importDefault(require("../../services/logger.service"));
 class FlutterwavePaymentProvider {
     constructor() {
         this.transferUrl = "https://api.flutterwave.com/v3/transfers";
