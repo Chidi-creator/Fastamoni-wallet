@@ -8,6 +8,10 @@ const env_1 = require("@config/env");
 const logger_service_1 = __importDefault(require("./logger.service"));
 class MailService {
     async sendMail(mailOptions) {
+        if (process.env.NODE_ENV === 'test') {
+            logger_service_1.default.info(`Mock email sent to ${mailOptions.to}: ${mailOptions.subject}`);
+            return;
+        }
         try {
             const mailBody = {
                 from: env_1.env.MAIL_USER,

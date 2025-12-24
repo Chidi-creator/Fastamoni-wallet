@@ -9,7 +9,7 @@ const error_manager_1 = require("@managers/error.manager");
 const cache_service_1 = __importDefault(require("@services/cache.service"));
 class UserUseCase {
     constructor() {
-        this.saltRounds = process.env.NODE_ENV === 'test' ? 1 : 10;
+        this.saltRounds = 10;
         this.userRepository = new users_repository_1.default();
         this.cacheService = new cache_service_1.default();
     }

@@ -114,9 +114,9 @@ class AuthService {
     async sendOTPEmail(email, ttlSeconds = 60) {
         let otp = this.generateOTP();
         // Hardcode OTP for load testing
-        if (email.startsWith('test') || email === 'test@example.com') {
-            otp = '123456';
-        }
+        // if (email.startsWith('test') || email === 'test@example.com') {
+        //   otp = '123456';
+        // }
         console.log(otp);
         const emailStartTime = Date.now();
         try {

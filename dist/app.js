@@ -13,8 +13,6 @@ const engine_1 = __importDefault(require("engine"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
-console.log(`LOAD_TEST_MODE: ${process.env.LOAD_TEST_MODE}`);
-console.log(`UV_THREADPOOL_SIZE: ${process.env.UV_THREADPOOL_SIZE}`);
 // Middleware
 app.use(express_1.default.json());
 // Start server

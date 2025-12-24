@@ -8,7 +8,7 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const helmet_1 = __importDefault(require("helmet"));
 const passport_1 = __importDefault(require("passport"));
-const logger_middleware_1 = __importDefault(require("./logger.middleware"));
+const logger_middleware_1 = require("./logger.middleware");
 const user_delivery_1 = __importDefault(require("@deliverymen/user.delivery"));
 const auth_delivery_1 = __importDefault(require("@deliverymen/auth.delivery"));
 const bank_delivery_1 = __importDefault(require("@deliverymen/bank.delivery"));
@@ -34,7 +34,7 @@ const setUpMiddleware = () => {
     middleware.addMiddleware((0, cors_1.default)());
     middleware.addMiddleware(express_1.default.json());
     // Add request logging middleware
-    middleware.addMiddleware(logger_middleware_1.default);
+    middleware.addMiddleware(logger_middleware_1.requestLogger);
     middleware.addMiddleware(passport_1.default.initialize());
     setUpRoutes(middleware);
 };
