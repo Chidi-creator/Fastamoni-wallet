@@ -256,3 +256,10 @@
 {"accountNumber":"1962456690","amount":5,"donorUserId":"b64ba9fe-62b5-4bd3-a168-aae09704502b","level":"\u001b[32minfo\u001b[39m","message":"Starting donation transfer for user b64ba9fe-62b5-4bd3-a168-aae09704502b","timestamp":"2025-12-24 02:30:28"}
 {"amount":5,"beneficiaryUserId":"b17a8560-aea8-4659-8f27-2d0dd75481ed","donationId":"07cbb71e-c5a4-4696-ab4e-b20c9400b244","donorUserId":"b64ba9fe-62b5-4bd3-a168-aae09704502b","idempotencyKey":"FM-IDMP-1766539828916","level":"\u001b[32minfo\u001b[39m","message":"Donation transfer completed","timestamp":"2025-12-24 02:30:31","transactionId":"e0c1b5df-029b-4304-a062-4036cd060e91"}
 {"level":"\u001b[32minfo\u001b[39m","message":"POST /transactions/transfer","responseTime":4373,"statusCode":200,"timestamp":"2025-12-24 02:30:31"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 09:56:02"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 09:56:03"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Setting up workers...","timestamp":"2025-12-24 09:56:03"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 09:56:03"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","timestamp":"2025-12-24 09:56:11"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /banks/","responseTime":13,"statusCode":401,"timestamp":"2025-12-24 09:56:11"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-24 09:56:18"}

@@ -1,0 +1,216 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 30
+      arrivalRate: 100
+      name: Load test
+  defaults:
+    headers:
+      Content-Type: 'application/json'
+
+scenarios:
+  - name: 'User registration and wallet creation'
+    weight: 30
+    flow:
+      - post:
+          url: '/users/register'
+          json:
+            firstname: 'Test'
+            lastname: 'User-{{ $randomString() }}'
+            email: 'test-{{ $randomString() }}@example.com'
+            password: 'password123'
+            phone: '+1234567890'
+
+  - name: 'Wallet transfer (donation)'
+    weight: 40
+    flow:
+      - post:
+          url: '/auth/login'
+          json:
+            email: 'test@example.com'
+            password: 'password123'
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+          capture: 
+            - json: "$.accessToken"
+              as: "token"
+      - post:
+          url: '/transactions/transfer'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+          json:
+            account_number: '1234567890'
+            amount: '100'
+            currency: 'NGN'
+
+  - name: 'Get donation count'
+    weight: 20
+    flow:
+      - post:
+          url: '/auth/login'
+          json:
+            email: 'test@example.com'
+            password: 'password123'
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+          capture: 
+            - json: "$.data.accessToken"
+              as: "token"
+      - get:
+          url: '/transactions/donations/count'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+
+  - name: 'Bank transfer (withdrawal)'
+    weight: 10
+    flow:
+      - post:
+          url: '/auth/login'
+          json:
+            email: 'test@example.com'
+            password: 'password123'
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+          capture: 
+            - json: "$.data.accessToken"
+              as: "token"
+      - post:
+          url: '/transactions/transfer/bank'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+          json:
+            account_number: '1234567890'
+            bank_code: '044'
+            amount: '50'
+            currency: 'NGN'
+
+  - name: 'OTP verification'
+    weight: 5
+    flow:
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+
+  - name: 'Account resolution'
+    weight: 10
+    flow:
+      - post:
+          url: '/auth/login'
+          json:
+            email: 'test@example.com'
+            password: 'password123'
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+          capture: 
+            - json: "$.data.accessToken"
+              as: "token"
+      - post:
+          url: '/accounts/resolve'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+          json:
+            account_number: '1234567890'
+            bank_code: '044'
+
+  - name: 'Get user accounts'
+    weight: 10
+    flow:
+      - post:
+          url: '/auth/login'
+          json:
+            email: 'test@example.com'
+            password: 'password123'
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+          capture: 
+            - json: "$.data.accessToken"
+              as: "token"
+      - get:
+          url: '/accounts/user'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+
+  - name: 'Get all banks'
+    weight: 5
+    flow:
+      - post:
+          url: '/auth/login'
+          json:
+            email: 'test@example.com'
+            password: 'password123'
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+          capture: 
+            - json: "$.data.accessToken"
+              as: "token"
+      - get:
+          url: '/banks?page=1&limit=10'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+
+  - name: 'Set PIN'
+    weight: 10
+    flow:
+      - post:
+          url: '/auth/login'
+          json:
+            email: 'test@example.com'
+            password: 'password123'
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+          capture: 
+            - json: "$.data.accessToken"
+              as: "token"
+      - post:
+          url: '/transactions/pin'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+          json:
+            pin: '1234'
+
+  - name: 'Update PIN'
+    weight: 5
+    flow:
+      - post:
+          url: '/auth/login'
+          json:
+            email: 'test@example.com'
+            password: 'password123'
+      - post:
+          url: '/auth/verify-otp'
+          json:
+            email: 'test@example.com'
+            otp: '123456'
+          capture: 
+            - json: "$.data.accessToken"
+              as: "token"
+      - patch:
+          url: '/transactions/pin'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+          json:
+            oldPin: '1234'
+            newPin: '5678'
