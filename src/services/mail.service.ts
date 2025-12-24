@@ -6,6 +6,11 @@ import logger from "./logger.service";
 
  class MailService {
   public async sendMail(mailOptions: EmailOptions): Promise<void> {
+    if (process.env.NODE_ENV === 'test') {
+      logger.info(`Mock email sent to ${mailOptions.to}: ${mailOptions.subject}`);
+      return;
+    }
+
     try {
       const mailBody = {
         from: env.MAIL_USER,

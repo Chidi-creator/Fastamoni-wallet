@@ -20,7 +20,7 @@ async function runLoadTest() {
   const server = spawn(process.platform === 'win32' ? 'cmd' : 'npm', process.platform === 'win32' ? ['/c', 'npm', 'run', 'dev'] : ['run', 'dev'], {
     stdio: 'inherit',
     detached: true,
-    // env: { ...process.env } // Default env
+    env: { ...process.env, NODE_ENV: 'test' }
   });
 
   // Wait for server to start by polling

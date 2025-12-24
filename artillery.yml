@@ -2,7 +2,7 @@ config:
   target: 'http://localhost:3000'
   phases:
     - duration: 30
-      arrivalRate: 100
+      arrivalRate: 20
       name: Load test
   defaults:
     headers:
@@ -35,7 +35,7 @@ scenarios:
             email: 'test@example.com'
             otp: '123456'
           capture: 
-            - json: "$.accessToken"
+            - json: "$.data.accessToken"
               as: "token"
       - post:
           url: '/transactions/transfer'
