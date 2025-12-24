@@ -11,6 +11,8 @@ dotenv.config();
 const app: Express = express();
 const PORT = process.env.PORT || 3000;
 
+
+
 // Middleware
 app.use(express.json());
 
@@ -26,9 +28,9 @@ async function startServer() {
     logger.info("Redis connected successfully");
 
     // Start background workers
-    setUpWorkers().catch((error) => {
-      logger.error("Error setting up workers:", error);
-    });
+      setUpWorkers().catch((error) => {
+        logger.error("Error setting up workers:", error);
+      });
 
     middleware.getApp().listen(PORT, () => {
       logger.info(`Server running on http://localhost:${PORT}`);

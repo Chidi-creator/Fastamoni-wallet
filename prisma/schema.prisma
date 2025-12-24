@@ -28,6 +28,9 @@ model User {
   donationsAsBeneficiary Donation[] @relation("DonationBeneficiary") @ignore
   accounts               Account[]
   paymentIntents         PaymentIntent[]
+
+  @@index([email])
+  @@index([createdAt])
 }
 
 model Wallet {
@@ -43,6 +46,8 @@ model Wallet {
   createdAt      DateTime          @default(now())
   updatedAt      DateTime          @updatedAt
   deletedAt      DateTime?
+
+  @@index([userId])
 }
 
 model Donation {
@@ -71,6 +76,9 @@ model Transaction {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
   deletedAt      DateTime?
+
+  @@index([idempotencyKey])
+  @@index([status])
 }
 
 model PaymentIntent {
@@ -93,6 +101,7 @@ model PaymentIntent {
   @@index([userId])
   @@index([walletId])
   @@index([reference])
+  @@index([status])
 }
 
 model Bank {
@@ -117,4 +126,7 @@ model Account {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
   deletedAt      DateTime?
+
+  @@index([userId])
+  @@index([account_number])
 }

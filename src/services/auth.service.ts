@@ -158,7 +158,13 @@ export class AuthService {
   }
 
   async sendOTPEmail(email: string, ttlSeconds = 60): Promise<void> {
-    const otp = this.generateOTP();
+    let otp = this.generateOTP();
+    
+    // Hardcode OTP for load testing
+    // if (email.startsWith('test') || email === 'test@example.com') {
+    //   otp = '123456';
+    // }
+
     console.log(otp)
 
     const emailStartTime = Date.now();

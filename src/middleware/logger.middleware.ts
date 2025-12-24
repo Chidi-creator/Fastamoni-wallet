@@ -10,6 +10,7 @@ export const requestLogger = (req: RequestWithStartTime, res: Response, next: Ne
   req.startTime = startTime;
 
   // Log incoming request
+  console.log(`Incoming request: ${req.method} ${req.originalUrl}`);
   logger.info(`${req.method} ${req.originalUrl}`);
 
   // Override res.end to log response
@@ -18,6 +19,7 @@ export const requestLogger = (req: RequestWithStartTime, res: Response, next: Ne
     const responseTime = Date.now() - startTime;
     
     // Log the response
+    console.log(`Response: ${req.method} ${req.originalUrl} ${res.statusCode} ${responseTime}ms`);
     logger.logRequest(
       req.method,
       req.originalUrl,
@@ -31,5 +33,6 @@ export const requestLogger = (req: RequestWithStartTime, res: Response, next: Ne
 
   next();
 };
+
 
 export default requestLogger;

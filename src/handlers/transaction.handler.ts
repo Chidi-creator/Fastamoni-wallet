@@ -4,6 +4,8 @@ import TransactionService from "@services/transaction.service";
 import { AuthenticatedRequest } from "@services/types/auth";
 import { CreditWalletPayload, WithdrawToAccountPayload } from "@services/types/wallet";
 import UserUseCase from "@usecases/user.usecase";
+import { addDonationTransferJob, addBankTransferJob, addWebhookJob } from "engine/jobs/transaction.jobs";
+import CacheService from "@services/cache.service";
 
 class TransactionHandler {
   private transactionService: TransactionService;
@@ -41,17 +43,18 @@ class TransactionHandler {
         return responseManager.unauthorized(res, "Invalid PIN");
       }
 
-      const result = await this.transactionService.handleDonationTransfer(
+      // Queue the donation transfer job
+      await addDonationTransferJob({
         payload,
-        userId,
-        idempotencyKey
-      );
+        donorUserId: userId,
+        idempotencyKey,
+      });
 
       return responseManager.success(
         res,
-        result,
-        "Donation transfer completed",
-        200
+        { message: "Donation transfer queued for processing" },
+        "Donation transfer initiated",
+        202
       );
     } catch (error: any) {
       return responseManager.handleError(res, error);
@@ -141,13 +144,14 @@ class TransactionHandler {
         return responseManager.unauthorized(res, "Invalid PIN");
       }
 
-      const result = await this.transactionService.initiateBankTransfer(
-        transferPayload,
+      // Queue the bank transfer job
+      await addBankTransferJob({
+        payload: transferPayload,
         userId,
-        idempotencyKey
-      );
+        idempotencyKey,
+      });
 
-      return responseManager.success(res, result, "Bank transfer initiated", 200);
+      return responseManager.success(res, { message: "Bank transfer queued for processing" }, "Bank transfer initiated", 202);
     } catch (error: any) {
       return responseManager.handleError(res, error);
     }
@@ -155,7 +159,8 @@ class TransactionHandler {
 
   handleFlutterwaveWebhook = async (req: Request, res: Response) => {
     try {
-      await this.transactionService.handleFlutterwaveWebhook(req.body, req.headers as any);
+      // Queue the webhook for processing
+      await addWebhookJob({ body: req.body, headers: req.headers as any });
       return res.status(200).send("OK");
     } catch (error: any) {
       return responseManager.handleError(res, error);
@@ -171,7 +176,16 @@ class TransactionHandler {
         return responseManager.unauthorized(res, "User not authenticated");
       }
 
+      const cacheService = new CacheService();
+      const cacheKey = `donation_count_${userId}`;
+      const cachedCount = await cacheService.get(cacheKey);
+
+      if (cachedCount !== null) {
+          return responseManager.success(res, { count: cachedCount }, "Donation count retrieved from cache", 200);
+      }
+
       const count = await this.transactionService.getDonationCount(userId);
+      await cacheService.set(cacheKey, count, 300); // 5 mins cache
 
       return responseManager.success(res, { count }, "Donation count retrieved successfully", 200);
     } catch (error: any) {

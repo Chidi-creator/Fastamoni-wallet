@@ -25,4 +25,7 @@ export enum QueueNames {
 
 export enum JOBS {
   CREATE_USER_WALLET = "create-user-wallet",
+  PROCESS_WEBHOOK = "process-webhook",
+  PROCESS_DONATION_TRANSFER = "process-donation-transfer",
+  PROCESS_BANK_TRANSFER = "process-bank-transfer",
 }

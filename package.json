@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
-    "seed:banks": "ts-node -r tsconfig-paths/register src/db/seeds/seed-banks.ts"
+    "seed:banks": "ts-node -r tsconfig-paths/register src/db/seeds/seed-banks.ts",
+    "seed:users": "ts-node -r tsconfig-paths/register src/db/seeds/seed-users.ts",
+    "test:load": "node loadtest.js"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +47,8 @@
     "@types/passport-jwt": "^4.0.1",
     "@types/pg": "^8.16.0",
     "@types/winston": "^2.4.4",
+    "artillery": "^2.0.27",
+    "forever": "^4.0.3",
     "prisma": "^7.2.0",
     "ts-node-dev": "^2.0.0"
   }

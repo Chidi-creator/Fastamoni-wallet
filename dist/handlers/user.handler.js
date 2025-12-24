@@ -4,10 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserHandler = void 0;
+const constants_1 = require("@config/constants");
 const index_1 = require("@managers/index");
 const wallet_service_1 = __importDefault(require("@services/wallet.service"));
 const user_usecase_1 = __importDefault(require("@usecases/user.usecase"));
 const user_1 = require("@validation/user");
+const wallet_jobs_1 = require("engine/jobs/wallet.jobs");
 class UserHandler {
     constructor() {
         this.handleCreateUser = async (req, res) => {
@@ -27,9 +29,11 @@ class UserHandler {
                     bvn: "22222222222", // Dummy BVN for now,
                     is_permanent: true,
                 };
-                //coming back to this to make it a background job
-                const newWallet = await this.walletService.callFlutterwaveWalletCreation(newUser.id, walletData);
-                return index_1.responseManager.success(res, { user: newUser, }, "User created successfully", 201);
+                await (0, wallet_jobs_1.addWalletJobs)(constants_1.JOBS.CREATE_USER_WALLET, {
+                    userId: newUser.id,
+                    walletData,
+                });
+                return index_1.responseManager.success(res, { user: newUser }, "User created successfully", 201);
             }
             catch (error) {
                 return index_1.responseManager.handleError(res, error);

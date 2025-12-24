@@ -1,14 +1,17 @@
 import bcrypt from "bcrypt";
 import UserRepository from "@repositories/users.repository";
-import { Prisma } from "@prisma/client";
+import { Prisma, User } from "@prisma/client";
 import { BadRequestError } from "@managers/error.manager";
+import CacheService from "@services/cache.service";
 
 class UserUseCase {
   userRepository: UserRepository;
   private readonly saltRounds = 10;
+  private cacheService: CacheService;
 
   constructor() {
     this.userRepository = new UserRepository();
+    this.cacheService = new CacheService();
   }
 
   private async hashPassword(password: string): Promise<string> {
@@ -19,11 +22,29 @@ class UserUseCase {
     const hashedPassword = await this.hashPassword(data.password);
     return this.userRepository.create({ ...data, password: hashedPassword });
   }
-  async getUserById(id: string) {
-    return this.userRepository.findById(id);
+  async getUserById(id: string): Promise<User | null> {
+    const cacheKey = `user:id:${id}`;
+    const cachedUser = await this.cacheService.get<User>(cacheKey);
+    if (cachedUser) {
+      return cachedUser;
+    }
+    const user = await this.userRepository.findById(id);
+    if (user) {
+      await this.cacheService.set(cacheKey, user, 3600);
+    }
+    return user;
   }
-  async getUserByEmail(email: string) {
-    return this.userRepository.findByEmail(email);
+  async getUserByEmail(email: string): Promise<User | null> {
+    const cacheKey = `user:email:${email}`;
+    const cachedUser = await this.cacheService.get<User>(cacheKey);
+    if (cachedUser) {
+      return cachedUser;
+    }
+    const user = await this.userRepository.findByEmail(email);
+    if (user) {
+      await this.cacheService.set(cacheKey, user, 3600); // Cache for 1 hour
+    }
+    return user;
   }
   async updateUser(id: string, data: Prisma.UserUpdateInput) {
     const payload: Prisma.UserUpdateInput = { ...data };

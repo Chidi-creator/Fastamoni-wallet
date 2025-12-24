@@ -9,9 +9,12 @@ const middleware_1 = __importDefault(require("./middleware"));
 const prisma_1 = require("./db/prisma");
 const logger_service_1 = __importDefault(require("@services/logger.service"));
 const providers_1 = require("./providers");
+const engine_1 = __importDefault(require("engine"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
+console.log(`LOAD_TEST_MODE: ${process.env.LOAD_TEST_MODE}`);
+console.log(`UV_THREADPOOL_SIZE: ${process.env.UV_THREADPOOL_SIZE}`);
 // Middleware
 app.use(express_1.default.json());
 // Start server
@@ -23,6 +26,10 @@ async function startServer() {
         logger_service_1.default.info("Initializing Redis connection...");
         await providers_1.redisConfig.connect();
         logger_service_1.default.info("Redis connected successfully");
+        // Start background workers
+        (0, engine_1.default)().catch((error) => {
+            logger_service_1.default.error("Error setting up workers:", error);
+        });
         middleware_1.default.getApp().listen(PORT, () => {
             logger_service_1.default.info(`Server running on http://localhost:${PORT}`);
         });

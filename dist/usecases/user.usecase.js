@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const users_repository_1 = __importDefault(require("@repositories/users.repository"));
 const error_manager_1 = require("@managers/error.manager");
+const cache_service_1 = __importDefault(require("@services/cache.service"));
 class UserUseCase {
     constructor() {
-        this.saltRounds = 10;
+        this.saltRounds = process.env.NODE_ENV === 'test' ? 1 : 10;
         this.userRepository = new users_repository_1.default();
+        this.cacheService = new cache_service_1.default();
     }
     async hashPassword(password) {
         return bcrypt_1.default.hash(password, this.saltRounds);
@@ -19,10 +21,28 @@ class UserUseCase {
         return this.userRepository.create({ ...data, password: hashedPassword });
     }
     async getUserById(id) {
-        return this.userRepository.findById(id);
+        const cacheKey = `user:id:${id}`;
+        const cachedUser = await this.cacheService.get(cacheKey);
+        if (cachedUser) {
+            return cachedUser;
+        }
+        const user = await this.userRepository.findById(id);
+        if (user) {
+            await this.cacheService.set(cacheKey, user, 3600);
+        }
+        return user;
     }
     async getUserByEmail(email) {
-        return this.userRepository.findByEmail(email);
+        const cacheKey = `user:email:${email}`;
+        const cachedUser = await this.cacheService.get(cacheKey);
+        if (cachedUser) {
+            return cachedUser;
+        }
+        const user = await this.userRepository.findByEmail(email);
+        if (user) {
+            await this.cacheService.set(cacheKey, user, 3600); // Cache for 1 hour
+        }
+        return user;
     }
     async updateUser(id, data) {
         const payload = { ...data };

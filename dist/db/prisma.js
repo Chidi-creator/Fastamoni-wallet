@@ -13,6 +13,9 @@ if (!connectionString) {
 }
 const pool = new pg_1.Pool({
     connectionString,
+    max: 50,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 2000,
 });
 const adapter = new adapter_pg_1.PrismaPg(pool);
 const prisma = new client_1.PrismaClient({ adapter });

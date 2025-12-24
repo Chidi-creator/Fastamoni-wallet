@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = require("@managers/index");
 const transaction_service_1 = __importDefault(require("@services/transaction.service"));
 const user_usecase_1 = __importDefault(require("@usecases/user.usecase"));
+const transaction_jobs_1 = require("engine/jobs/transaction.jobs");
+const cache_service_1 = __importDefault(require("@services/cache.service"));
 class TransactionHandler {
     constructor() {
         this.handleDonationTransfer = async (req, res) => {
@@ -25,8 +27,13 @@ class TransactionHandler {
                 if (!isPinValid) {
                     return index_1.responseManager.unauthorized(res, "Invalid PIN");
                 }
-                const result = await this.transactionService.handleDonationTransfer(payload, userId, idempotencyKey);
-                return index_1.responseManager.success(res, result, "Donation transfer completed", 200);
+                // Queue the donation transfer job
+                await (0, transaction_jobs_1.addDonationTransferJob)({
+                    payload,
+                    donorUserId: userId,
+                    idempotencyKey,
+                });
+                return index_1.responseManager.success(res, { message: "Donation transfer queued for processing" }, "Donation transfer initiated", 202);
             }
             catch (error) {
                 return index_1.responseManager.handleError(res, error);
@@ -85,8 +92,13 @@ class TransactionHandler {
                 if (!isPinValid) {
                     return index_1.responseManager.unauthorized(res, "Invalid PIN");
                 }
-                const result = await this.transactionService.initiateBankTransfer(transferPayload, userId, idempotencyKey);
-                return index_1.responseManager.success(res, result, "Bank transfer initiated", 200);
+                // Queue the bank transfer job
+                await (0, transaction_jobs_1.addBankTransferJob)({
+                    payload: transferPayload,
+                    userId,
+                    idempotencyKey,
+                });
+                return index_1.responseManager.success(res, { message: "Bank transfer queued for processing" }, "Bank transfer initiated", 202);
             }
             catch (error) {
                 return index_1.responseManager.handleError(res, error);
@@ -94,7 +106,8 @@ class TransactionHandler {
         };
         this.handleFlutterwaveWebhook = async (req, res) => {
             try {
-                await this.transactionService.handleFlutterwaveWebhook(req.body, req.headers);
+                // Queue the webhook for processing
+                await (0, transaction_jobs_1.addWebhookJob)({ body: req.body, headers: req.headers });
                 return res.status(200).send("OK");
             }
             catch (error) {
@@ -108,7 +121,14 @@ class TransactionHandler {
                 if (!userId) {
                     return index_1.responseManager.unauthorized(res, "User not authenticated");
                 }
+                const cacheService = new cache_service_1.default();
+                const cacheKey = `donation_count_${userId}`;
+                const cachedCount = await cacheService.get(cacheKey);
+                if (cachedCount !== null) {
+                    return index_1.responseManager.success(res, { count: cachedCount }, "Donation count retrieved from cache", 200);
+                }
                 const count = await this.transactionService.getDonationCount(userId);
+                await cacheService.set(cacheKey, count, 300); // 5 mins cache
                 return index_1.responseManager.success(res, { count }, "Donation count retrieved successfully", 200);
             }
             catch (error) {
