@@ -20,6 +20,7 @@ model User {
   password               String
   wallet                 Wallet?
   pinHash                String?
+  thanked                Boolean    @default(false)
   createdAt              DateTime   @default(now())
   updatedAt              DateTime   @updatedAt
   deletedAt              DateTime?
@@ -51,7 +52,6 @@ model Donation {
   donor         User         @relation("DonationDonor", fields: [donorId], references: [id])
   beneficiary   User         @relation("DonationBeneficiary", fields: [beneficiaryId], references: [id])
   amount        Int
-  thankYouSent  Boolean      @default(false)
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
   deletedAt     DateTime?

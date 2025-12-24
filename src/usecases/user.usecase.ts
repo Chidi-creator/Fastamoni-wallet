@@ -86,6 +86,10 @@ class UserUseCase {
     }
     return bcrypt.compare(pin, storedPinHash);
   }
+
+  async setThanked(userId: string, thanked: boolean) {
+    return this.userRepository.update(userId, { thanked });
+  }
 }
 
 export default UserUseCase;

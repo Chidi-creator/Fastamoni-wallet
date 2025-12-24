@@ -8,6 +8,7 @@ import UserRoutes from "@deliverymen/user.delivery";
 import AuthRoutes from "@deliverymen/auth.delivery";
 import BankRoutes from "@deliverymen/bank.delivery";
 import AccountRoutes from "@deliverymen/account.delivery";
+import TransactionRoutes from "@deliverymen/transaction.delivery";
 
 const app = express();
 const middleware = new Middleware(app);
@@ -22,6 +23,9 @@ const setUpRoutes = (middleware: Middleware) => {
   middleware.addMiddleware("/auth", AuthRoutes);
   middleware.addMiddleware("/accounts", AccountRoutes);
   middleware.addMiddleware("/banks", BankRoutes);
+  // Mount transaction routes under /transactions and also at root to keep webhook path stable
+  middleware.addMiddleware("/transactions", TransactionRoutes);
+  middleware.addMiddleware("/", TransactionRoutes);
 
 };
 

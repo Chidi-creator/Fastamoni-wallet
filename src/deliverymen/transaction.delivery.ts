@@ -11,13 +11,17 @@ router
   .post([authService.auth], transactionHandler.handleDonationTransfer);
 
 router
+  .route("/transfer/bank")
+  .post([authService.auth], transactionHandler.initiateBankTransfer);
+
+router
   .route("/pin")
   .post([authService.auth], transactionHandler.setPin)
   .patch([authService.auth], transactionHandler.updatePin);
 
 router
-  .route("/deposit/initiate")
-  .post([authService.auth], transactionHandler.initiateDeposit);
+  .route("/donations/count")
+  .get([authService.auth], transactionHandler.getDonationCount);
 
 router
   .route("/webhook/flutterwave")

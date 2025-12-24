@@ -161,3 +161,98 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-23 18:11:54"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-23 18:11:54"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-23 18:11:56"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 01:20:05"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 01:20:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 01:20:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\nShutting down gracefully...","timestamp":"2025-12-24 01:26:16"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 01:33:48"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 01:33:50"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 01:33:50"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","timestamp":"2025-12-24 01:37:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","responseTime":6,"statusCode":404,"timestamp":"2025-12-24 01:37:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 01:40:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 01:40:37"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 01:40:37"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 01:41:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 01:41:08"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 01:41:08"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 01:42:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 01:42:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 01:42:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","timestamp":"2025-12-24 01:44:16"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","responseTime":27,"statusCode":404,"timestamp":"2025-12-24 01:44:16"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 01:46:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 01:46:05"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 01:46:05"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","timestamp":"2025-12-24 01:47:25"}
+{"eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Routing Flutterwave webhook to payment handler","timestamp":"2025-12-24 01:47:25","tx_ref":"1766502431714-RND_464"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"Payment intent not found and no account_number to map wallet","reference":"1766502431714-RND_464","timestamp":"2025-12-24 01:47:27"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","responseTime":1973,"statusCode":200,"timestamp":"2025-12-24 01:47:27"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 01:49:03"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 01:49:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 01:49:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","timestamp":"2025-12-24 01:50:07"}
+{"eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Routing Flutterwave webhook to payment handler","timestamp":"2025-12-24 01:50:07","tx_ref":"1766496891171-RND_220"}
+{"amount":2,"currency":"NGN","eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Received Flutterwave payment webhook","reference":"1766496891171-RND_220","status":"successful","timestamp":"2025-12-24 01:50:07","tx_ref":"1766496891171-RND_220"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"Payment intent not found and no account_number to map wallet","rawKeys":["id","tx_ref","flw_ref","device_fingerprint","amount","currency","charged_amount","app_fee","merchant_fee","processor_response","auth_model","ip","narration","status","payment_type","created_at","account_id","customer"],"reference":"1766496891171-RND_220","timestamp":"2025-12-24 01:50:09","tx_ref":"1766496891171-RND_220"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","responseTime":2188,"statusCode":200,"timestamp":"2025-12-24 01:50:09"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 01:58:32"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 01:58:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 01:58:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","timestamp":"2025-12-24 01:59:46"}
+{"data":{"account_id":3248273,"amount":2,"app_fee":0.04,"auth_model":"AUTH","charged_amount":2,"created_at":"2025-12-24T00:59:47.000Z","currency":"NGN","customer":{"created_at":"2025-12-23T13:34:51.000Z","email":"tyler.igwe@gmail.com","id":1272761788,"name":"Chidiebere Igwe","phone_number":"08012345678"},"device_fingerprint":"N/A","flw_ref":"NXG945849394174781311","id":1945059551,"ip":"::ffff:172.16.15.177","merchant_fee":0,"narration":"ChidiOne","payment_type":"bank_transfer","processor_response":"received successfully","status":"successful","tx_ref":"1766496891171-RND_220"},"event":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Raw Flutterwave webhook received","timestamp":"2025-12-24 01:59:46"}
+{"eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Routing Flutterwave webhook to payment handler","timestamp":"2025-12-24 01:59:46","tx_ref":"1766496891171-RND_220"}
+{"amount":2,"currency":"NGN","eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Received Flutterwave payment webhook","reference":"1766496891171-RND_220","status":"successful","timestamp":"2025-12-24 01:59:46","tx_ref":"1766496891171-RND_220"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"Payment intent not found and no account_number to map wallet","rawKeys":["id","tx_ref","flw_ref","device_fingerprint","amount","currency","charged_amount","app_fee","merchant_fee","processor_response","auth_model","ip","narration","status","payment_type","created_at","account_id","customer"],"reference":"1766496891171-RND_220","timestamp":"2025-12-24 01:59:48","tx_ref":"1766496891171-RND_220"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","responseTime":1717,"statusCode":200,"timestamp":"2025-12-24 01:59:48"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 02:02:33"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 02:02:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 02:02:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 02:05:17"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 02:05:17"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 02:05:17"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","timestamp":"2025-12-24 02:06:58"}
+{"data":{"account_id":3248273,"amount":2,"app_fee":0.04,"auth_model":"AUTH","charged_amount":2,"created_at":"2025-12-24T01:06:59.000Z","currency":"NGN","customer":{"created_at":"2025-12-23T13:34:51.000Z","email":"tyler.igwe@gmail.com","id":1272761788,"name":"Chidiebere Igwe","phone_number":"08012345678"},"device_fingerprint":"N/A","flw_ref":"NXG945892998264426711","id":1945060617,"ip":"::ffff:172.16.15.177","merchant_fee":0,"narration":"ChidiOne","payment_type":"bank_transfer","processor_response":"received successfully","status":"successful","tx_ref":"1766496891171-RND_220"},"event":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Raw Flutterwave webhook received","timestamp":"2025-12-24 02:06:58"}
+{"eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Routing Flutterwave webhook to payment handler","timestamp":"2025-12-24 02:06:58","tx_ref":"1766496891171-RND_220"}
+{"amount":2,"currency":"NGN","eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Received Flutterwave payment webhook","reference":"1766496891171-RND_220","status":"successful","timestamp":"2025-12-24 02:06:58","tx_ref":"1766496891171-RND_220"}
+{"amount":2,"email":"tyler.igwe@gmail.com","level":"\u001b[32minfo\u001b[39m","message":"Crediting wallet from webhook (email mapping ONLY)","reference":"1766496891171-RND_220","timestamp":"2025-12-24 02:07:00","userId":"b64ba9fe-62b5-4bd3-a168-aae09704502b","walletId":"35c42364-8582-4237-828a-2a5df2b4db1b"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","responseTime":2671,"statusCode":200,"timestamp":"2025-12-24 02:07:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","timestamp":"2025-12-24 02:09:42"}
+{"data":{"account_id":3248273,"amount":40,"app_fee":0.8,"auth_model":"AUTH","charged_amount":40,"created_at":"2025-12-24T01:09:42.000Z","currency":"NGN","customer":{"created_at":"2025-12-23T13:34:51.000Z","email":"tyler.igwe@gmail.com","id":1272761788,"name":"Chidiebere Igwe","phone_number":"08012345678"},"device_fingerprint":"N/A","flw_ref":"NXG714112442696519900","id":1945061112,"ip":"::ffff:172.16.15.177","merchant_fee":0,"narration":"ChidiOne","payment_type":"bank_transfer","processor_response":"received successfully","status":"successful","tx_ref":"1766496891171-RND_220"},"event":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Raw Flutterwave webhook received","timestamp":"2025-12-24 02:09:42"}
+{"eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Routing Flutterwave webhook to payment handler","timestamp":"2025-12-24 02:09:42","tx_ref":"1766496891171-RND_220"}
+{"amount":40,"currency":"NGN","eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Received Flutterwave payment webhook","reference":"1766496891171-RND_220","status":"successful","timestamp":"2025-12-24 02:09:42","tx_ref":"1766496891171-RND_220"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","responseTime":1484,"statusCode":200,"timestamp":"2025-12-24 02:09:43"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 02:13:55"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 02:13:56"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 02:13:56"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 02:15:31"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 02:15:32"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 02:15:32"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 02:16:35"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 02:16:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 02:16:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","timestamp":"2025-12-24 02:17:35"}
+{"data":{"account_id":3248273,"amount":10,"app_fee":0.2,"auth_model":"AUTH","charged_amount":10,"created_at":"2025-12-24T01:17:29.000Z","currency":"NGN","customer":{"created_at":"2025-12-23T13:34:51.000Z","email":"tyler.igwe@gmail.com","id":1272761788,"name":"Chidiebere Igwe","phone_number":"08012345678"},"device_fingerprint":"N/A","flw_ref":"NXG1099701823050114001","id":1945062674,"ip":"::ffff:172.16.15.177","merchant_fee":0,"narration":"ChidiOne","payment_type":"bank_transfer","processor_response":"received successfully","status":"successful","tx_ref":"1766496891171-RND_220"},"event":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Raw Flutterwave webhook received","timestamp":"2025-12-24 02:17:35"}
+{"eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Routing Flutterwave webhook to payment handler","timestamp":"2025-12-24 02:17:35","tx_ref":"1766496891171-RND_220"}
+{"amount":10,"currency":"NGN","eventType":"charge.completed","level":"\u001b[32minfo\u001b[39m","message":"Received Flutterwave payment webhook","reference":"1766496891171-RND_220","status":"successful","timestamp":"2025-12-24 02:17:35","tx_ref":"1766496891171-RND_220"}
+{"amount":10,"email":"tyler.igwe@gmail.com","level":"\u001b[32minfo\u001b[39m","message":"Crediting wallet from webhook (email mapping ONLY)","reference":"1766496891171-RND_220-1766539055485","timestamp":"2025-12-24 02:17:37","userId":"b64ba9fe-62b5-4bd3-a168-aae09704502b","walletId":"35c42364-8582-4237-828a-2a5df2b4db1b"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /webhook/flutterwave","responseTime":2900,"statusCode":200,"timestamp":"2025-12-24 02:17:38"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","timestamp":"2025-12-24 02:20:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":"sending email to tyler.igwe@gmail.com","timestamp":"2025-12-24 02:20:03"}
+{"duration":3811,"level":"\u001b[32minfo\u001b[39m","message":"Email: Your OTP Code to tyler.igwe@gmail.com - SENT","timestamp":"2025-12-24 02:20:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/login","responseTime":5689,"statusCode":200,"timestamp":"2025-12-24 02:20:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","timestamp":"2025-12-24 02:20:24"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /auth/verify-otp","responseTime":2312,"statusCode":200,"timestamp":"2025-12-24 02:20:27"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /transactions/pin","timestamp":"2025-12-24 02:23:25"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /transactions/pin","responseTime":5,"statusCode":404,"timestamp":"2025-12-24 02:23:25"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /transactions/pin","timestamp":"2025-12-24 02:23:45"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /transactions/pin","responseTime":2857,"statusCode":200,"timestamp":"2025-12-24 02:23:47"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Redis connection...","timestamp":"2025-12-24 02:30:03"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Redis connected successfully","timestamp":"2025-12-24 02:30:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running on http://localhost:3000","timestamp":"2025-12-24 02:30:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /transactions/transfer","timestamp":"2025-12-24 02:30:21"}
+{"level":"\u001b[32minfo\u001b[39m","message":"GET /transactions/transfer","responseTime":11,"statusCode":404,"timestamp":"2025-12-24 02:30:21"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /transactions/transfer","timestamp":"2025-12-24 02:30:27"}
+{"accountNumber":"1962456690","amount":5,"donorUserId":"b64ba9fe-62b5-4bd3-a168-aae09704502b","level":"\u001b[32minfo\u001b[39m","message":"Starting donation transfer for user b64ba9fe-62b5-4bd3-a168-aae09704502b","timestamp":"2025-12-24 02:30:28"}
+{"amount":5,"beneficiaryUserId":"b17a8560-aea8-4659-8f27-2d0dd75481ed","donationId":"07cbb71e-c5a4-4696-ab4e-b20c9400b244","donorUserId":"b64ba9fe-62b5-4bd3-a168-aae09704502b","idempotencyKey":"FM-IDMP-1766539828916","level":"\u001b[32minfo\u001b[39m","message":"Donation transfer completed","timestamp":"2025-12-24 02:30:31","transactionId":"e0c1b5df-029b-4304-a062-4036cd060e91"}
+{"level":"\u001b[32minfo\u001b[39m","message":"POST /transactions/transfer","responseTime":4373,"statusCode":200,"timestamp":"2025-12-24 02:30:31"}

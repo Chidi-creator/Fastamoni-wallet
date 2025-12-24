@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { responseManager } from "@managers/index";
 import TransactionService from "@services/transaction.service";
 import { AuthenticatedRequest } from "@services/types/auth";
-import { CreditWalletPayload, DepositPayload } from "@services/types/wallet";
+import { CreditWalletPayload, WithdrawToAccountPayload } from "@services/types/wallet";
 import UserUseCase from "@usecases/user.usecase";
 
 class TransactionHandler {
@@ -119,7 +119,7 @@ class TransactionHandler {
     }
   };
 
-  initiateDeposit = async (req: Request, res: Response) => {
+  initiateBankTransfer = async (req: Request, res: Response) => {
     try {
       const authReq = req as AuthenticatedRequest;
       const userId = authReq.user?.id;
@@ -128,16 +128,26 @@ class TransactionHandler {
         return responseManager.unauthorized(res, "User not authenticated");
       }
 
-      const payload = req.body as DepositPayload;
+      const payload = req.body as WithdrawToAccountPayload & { pin?: string };
+      const { pin, ...transferPayload } = payload;
       const idempotencyKey = req.headers["idempotency-key"] as string | undefined;
 
-      const result = await this.transactionService.initiateDeposit(
-        payload,
+      if (!pin) {
+        return responseManager.validationError(res, "PIN is required for bank transfer");
+      }
+
+      const isPinValid = await this.userUseCase.verifyPin(userId, pin);
+      if (!isPinValid) {
+        return responseManager.unauthorized(res, "Invalid PIN");
+      }
+
+      const result = await this.transactionService.initiateBankTransfer(
+        transferPayload,
         userId,
         idempotencyKey
       );
 
-      return responseManager.success(res, result, "Deposit initiated", 200);
+      return responseManager.success(res, result, "Bank transfer initiated", 200);
     } catch (error: any) {
       return responseManager.handleError(res, error);
     }
@@ -147,6 +157,23 @@ class TransactionHandler {
     try {
       await this.transactionService.handleFlutterwaveWebhook(req.body, req.headers as any);
       return res.status(200).send("OK");
+    } catch (error: any) {
+      return responseManager.handleError(res, error);
+    }
+  };
+
+  getDonationCount = async (req: Request, res: Response) => {
+    try {
+      const authReq = req as AuthenticatedRequest;
+      const userId = authReq.user?.id;
+
+      if (!userId) {
+        return responseManager.unauthorized(res, "User not authenticated");
+      }
+
+      const count = await this.transactionService.getDonationCount(userId);
+
+      return responseManager.success(res, { count }, "Donation count retrieved successfully", 200);
     } catch (error: any) {
       return responseManager.handleError(res, error);
     }
